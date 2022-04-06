@@ -1,6 +1,7 @@
 package com.company;
 
 /**
+ * OH YEAH!
  * The versatile Coffee Making Machine(CMM) Class.
  *
  * Implementation Details:
