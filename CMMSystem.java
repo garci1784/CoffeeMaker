@@ -1,7 +1,6 @@
 package com.company;
 
 /**
- * OH YEAH!
  * The versatile Coffee Making Machine(CMM) Class.
  *
  * Implementation Details:
@@ -17,37 +16,50 @@ package com.company;
  * The first digit is either 0 running or 1 not running.
  * The second digit is from 1 to 5, indicating the currently chosen coffee program.
  */
-public class CMMSystem { // Use interface?
+public class CMMSystem implements CMM_Program_API_IF{ // Use interface?
 
     /**
      * Produces a cup of coffee of the specified type when it runs to completion.
      */
-    public void makeCoffee(){
+    @Override
+    public void setGrindingTime(int seconds) {
             System.out.println("Running CMM make coffee method");
     }
 
-    public void setGrindingTime(int secs){
+    @Override
+    public void makeCoffee() {
 
     }
 
-    public void setTemperatiure(int degree){
+    @Override
+    public void setTemperature(int degrees) {
 
     }
 
-    public void wait(int seconds){
+    @Override
+    public void holdTemperature(int seconds) {
 
     }
 
-    public void setPowerLED(int num){
-    
-    }
-
-    public void setTypeLED(int num){
+    @Override
+    public void wait(int seconds) {
 
     }
 
-    public void displayPrice(CMM_Program_API_IF cf){
+    @Override
+    public void setPowerLED(int num) {
 
     }
+
+    @Override
+    public void setTypeLED(int num) {
+
+    }
+
+    @Override
+    public void displayPrice(CMM_Program_API_IF cf) {
+
+    }
+
 
 }
