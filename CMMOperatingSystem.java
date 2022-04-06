@@ -1,5 +1,8 @@
 package com.company;
 
+import javax.net.ssl.SNIServerName;
+import java.net.URLClassLoader;
+
 /**
  * The versatile Coffee Making Machine(CMM) Class.
  *
@@ -16,7 +19,8 @@ package com.company;
  * The first digit is either 0 running or 1 not running.
  * The second digit is from 1 to 5, indicating the currently chosen coffee program.
  */
-public class CMMSystem implements CMM_Program_API_IF{ // Use interface?
+public class CMMOperatingSystem implements CMM_Program_API_IF, Runnable{ // Use interface?
+
 
     /**
      * Produces a cup of coffee of the specified type when it runs to completion.
@@ -61,5 +65,15 @@ public class CMMSystem implements CMM_Program_API_IF{ // Use interface?
 
     }
 
+    /**
+     * ...Using classloader to link objects dynamically.
+     *
+     */
+    @Override
+    public void run() {
+//        ClassLoader cloader = new URLClassLoader(pathURL);
+//        Class c = cloader.load(serverName);
+//        currentCMMProgram = ()
 
+    }
 }
