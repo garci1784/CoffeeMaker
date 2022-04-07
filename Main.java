@@ -6,9 +6,16 @@ package com.company;
  */
 public class Main {
 
-    //TODO: Create instance of CMM class here and test functions
+
     public static void main(String[] args) {
 	// write your code here
         System.out.println("The main is running...");
+
+        //TODO: implement main menu for program selection, OR test all coffee servers sequentially
+
+        // testing out program selection
+        CMMOperatingSystem InstanceOS = new CMMOperatingSystem();
+
+        InstanceOS.run("coffee");
     }
 }

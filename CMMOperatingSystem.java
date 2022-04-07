@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Locale;
+
 /**
  * The versatile Coffee Making Machine(CMM) Class.
  *
@@ -17,7 +19,7 @@ package com.company;
  * The second digit is from 1 to 5, indicating the currently chosen coffee program.
  */
 public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface?
-
+    private AbstractCMM_LoadableServer program;
 
 
     /**
@@ -25,6 +27,8 @@ public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface
      */
     CMMOperatingSystem(){
         System.out.println("Booting up Coffee OS...");
+
+//        program = new Coffee_Server(); // test to see if we can set the loader to a specific program
 
         // instantiating abstract class AbstractCMM_LoadableServer
 //        AbstractCMM_LoadableServer program; // I dont think this is right...
@@ -85,6 +89,36 @@ public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface
 //        ClassLoader cloader = new URLClassLoader(pathURL);
 //        Class c = cloader.load(serverName);
 //        currentCMMProgram = ()
+        AbstractCMM_LoadableServer classLoader;
+
+        switch(programName.toUpperCase(Locale.ROOT)){
+            case "COFFEE":
+                classLoader = new Coffee_Server();
+
+                System.out.println("Selected program is " + classLoader.getName()); // append program.getName() here
+                break;
+
+            case "CAPPUCCINO":
+                classLoader = new Capp_Server();
+                System.out.println("Selected program is cappuccino coffee" ); // append program.getName() here
+                break;
+
+            case"MOCHA":
+                classLoader = new Mocha_Server();
+                System.out.println("Selected program is mocha coffee" ); // append program.getName() here
+                break;
+
+            case "ESPRESSO":
+                classLoader = new Espresso_Server();
+                System.out.println("Selected program is espresso coffee" ); // append program.getName() here
+                break;
+
+            case"LATTE":
+                classLoader = new Latte_Server();
+                System.out.println("Selected program is latte coffee" ); // append program.getName() here
+                break;
+        }// end switch for program name
+
 
     }
-}
+}// end CMMOperatingSystem class
