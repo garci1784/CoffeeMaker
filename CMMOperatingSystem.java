@@ -19,7 +19,7 @@ import java.util.Locale;
  * The second digit is from 1 to 5, indicating the currently chosen coffee program.
  */
 public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface?
-    private AbstractCMM_LoadableServer program;
+    private AbstractCMM_LoadableServer currentProgram;
 
 
     /**
@@ -69,9 +69,18 @@ public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface
 
     }
 
+    /**
+     * 1.Regular
+     * 2.Mocha
+     * 3.Latte
+     * 4.Espresso
+     * 5.Cappuccino
+     *
+     * @param num
+     */
     @Override
     public void setTypeLED(int num) {
-
+        currentProgram.getEnvironment().setTypeLED(3);
     }
 
     @Override
@@ -96,28 +105,55 @@ public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface
             case "COFFEE":
                 classLoader = new Coffee_Server();
                 classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
-                System.out.println("Selected program is " + classLoader.getName()); // append program.getName() here
                 classLoader.getEnvironment().makeCoffee();
+
+                // OS setting current running program
+                currentProgram = classLoader; // idk what Im doing.
+                System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
                 break;
 
             case "CAPPUCCINO":
                 classLoader = new Capp_Server();
-                System.out.println("Selected program is cappuccino coffee" ); // append program.getName() here
+                classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
+                classLoader.getEnvironment().makeCoffee();
+
+                // OS setting current running program
+                currentProgram = classLoader;
+                System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+
                 break;
 
             case"MOCHA":
                 classLoader = new Mocha_Server();
-                System.out.println("Selected program is mocha coffee" ); // append program.getName() here
+                classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
+                classLoader.getEnvironment().makeCoffee();
+
+                // OS setting current running program
+                currentProgram = classLoader;
+                System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+
                 break;
 
             case "ESPRESSO":
                 classLoader = new Espresso_Server();
-                System.out.println("Selected program is espresso coffee" ); // append program.getName() here
+                classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
+                classLoader.getEnvironment().makeCoffee();
+
+                // OS setting current running program
+                currentProgram = classLoader;
+                System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+
                 break;
 
             case"LATTE":
                 classLoader = new Latte_Server();
-                System.out.println("Selected program is latte coffee" ); // append program.getName() here
+                classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
+                classLoader.getEnvironment().makeCoffee();
+
+                // OS setting current running program
+                currentProgram = classLoader;
+                System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+
                 break;
         }// end switch for program name
 

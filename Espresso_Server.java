@@ -3,7 +3,7 @@ package com.company;
 /**
  * A concrete "loadable class" coffee making program
  */
-public class Espresso_Server extends AbstractCMM_LoadableServer {
+public class Espresso_Server extends AbstractCMM_LoadableServer implements CMM_Program_API_IF{
     private String name = "Espresso program";
 
 
@@ -11,7 +11,7 @@ public class Espresso_Server extends AbstractCMM_LoadableServer {
 
     }
 
-    /*
+
     @Override
     public void setGrindingTime(int seconds) {
 
@@ -46,7 +46,7 @@ public class Espresso_Server extends AbstractCMM_LoadableServer {
     public void displayPrice(CMM_Program_API_IF cf) {
 
     }
-    */
+
 
     @Override
     public String getName() {
