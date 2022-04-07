@@ -1,8 +1,5 @@
 package com.company;
 
-import javax.net.ssl.SNIServerName;
-import java.net.URLClassLoader;
-
 /**
  * The versatile Coffee Making Machine(CMM) Class.
  *
@@ -19,7 +16,20 @@ import java.net.URLClassLoader;
  * The first digit is either 0 running or 1 not running.
  * The second digit is from 1 to 5, indicating the currently chosen coffee program.
  */
-public class CMMOperatingSystem implements CMM_Program_API_IF, Runnable{ // Use interface?
+public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface?
+
+
+
+    /**
+     * Constructor for OperatingSystem Object, should instantiate environment.
+     */
+    CMMOperatingSystem(){
+        System.out.println("Booting up Coffee OS...");
+
+        // instantiating abstract class AbstractCMM_LoadableServer
+//        AbstractCMM_LoadableServer program; // I dont think this is right...
+    }
+
 
 
     /**
@@ -32,7 +42,7 @@ public class CMMOperatingSystem implements CMM_Program_API_IF, Runnable{ // Use 
 
     @Override
     public void makeCoffee() {
-
+        // getEnvironment().makeCoffee();
     }
 
     @Override
@@ -62,15 +72,16 @@ public class CMMOperatingSystem implements CMM_Program_API_IF, Runnable{ // Use 
 
     @Override
     public void displayPrice(CMM_Program_API_IF cf) {
-
+        //getEnvironment.displayPrice();
+        // OR cf.displayPrice();
     }
 
     /**
      * ...Using classloader to link objects dynamically.
      *
+     * set environment here?
      */
-    @Override
-    public void run() {
+    public void run(String programName) {
 //        ClassLoader cloader = new URLClassLoader(pathURL);
 //        Class c = cloader.load(serverName);
 //        currentCMMProgram = ()

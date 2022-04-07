@@ -1,16 +1,16 @@
 package com.company;
 
 /**
- * A concrete coffee making program
+ * A concrete "loadable class" coffee making program
  */
-public class Latte_Server extends CMM_LoadableServer implements CMM_Program_API_IF{
+public class Latte_Server extends AbstractCMM_LoadableServer{
     private String name = "Latte program";
 
-    @Override
     public void makeCoffee() {
 
     }
 
+    /*
     @Override
     public void setGrindingTime(int seconds) {
 
@@ -45,6 +45,7 @@ public class Latte_Server extends CMM_LoadableServer implements CMM_Program_API_
     public void displayPrice(CMM_Program_API_IF cf) {
 
     }
+    */
 
     @Override
     public void setEnvironment(CMM_Program_API_IF cf) {
