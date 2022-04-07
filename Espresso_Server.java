@@ -47,10 +47,6 @@ public class Espresso_Server extends AbstractCMM_LoadableServer {
 
     }
     */
-    @Override
-    void setEnvironment(CMM_Program_API_IF cf) {
-
-    }
 
     @Override
     public String getName() {

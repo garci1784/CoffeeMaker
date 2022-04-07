@@ -8,6 +8,7 @@ public class Coffee_Server extends AbstractCMM_LoadableServer implements CMM_Pro
 
     @Override
     public void makeCoffee() {
+        System.out.println("In the regular coffee program, makeCoffee() method");
        /*
         1.	Indicate the machine as running and display the purchased type of coffee to LED.
         2.	Grind coffee beans for 8 seconds.
@@ -51,10 +52,6 @@ public class Coffee_Server extends AbstractCMM_LoadableServer implements CMM_Pro
 
     }
 
-    @Override
-    public void setEnvironment(CMM_Program_API_IF cf) {
-
-    }
 
     @Override
     public String getName() {

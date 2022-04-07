@@ -46,10 +46,6 @@ public class Capp_Server extends AbstractCMM_LoadableServer{
 
     }
     */
-    @Override
-    public void setEnvironment(CMM_Program_API_IF cf) {
-
-    }
 
     @Override
     public String getName() {

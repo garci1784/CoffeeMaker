@@ -5,6 +5,10 @@ package com.company;
  */
 public class Mocha_Server extends AbstractCMM_LoadableServer{
     private String name = "Mocha program";
+    private int grindTime;
+    private int temp;
+    private int holdTime;
+
 
     @Override
     public void makeCoffee() {
@@ -55,10 +59,6 @@ public class Mocha_Server extends AbstractCMM_LoadableServer{
     }
     */
 
-    @Override
-    public void setEnvironment(CMM_Program_API_IF cf) {
-
-    }
 
     @Override
     public String getName() {

@@ -92,10 +92,12 @@ public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface
         AbstractCMM_LoadableServer classLoader;
 
         switch(programName.toUpperCase(Locale.ROOT)){
+
             case "COFFEE":
                 classLoader = new Coffee_Server();
-
+                classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
                 System.out.println("Selected program is " + classLoader.getName()); // append program.getName() here
+                classLoader.getEnvironment().makeCoffee();
                 break;
 
             case "CAPPUCCINO":

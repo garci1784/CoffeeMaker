@@ -9,7 +9,9 @@ public abstract class AbstractCMM_LoadableServer {
 
     public abstract void makeCoffee();
 
-    abstract void setEnvironment(CMM_Program_API_IF cf);
+    protected void setEnvironment(CMM_Program_API_IF cf){
+        this.env = cf;
+    }
     /**
      * Allow subclasses to fetch the reference to the environment
      *
