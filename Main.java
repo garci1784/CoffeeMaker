@@ -17,9 +17,11 @@ public class Main {
         CMMOperatingSystem InstanceOS = new CMMOperatingSystem();
 
         InstanceOS.run("coffee");
-        InstanceOS.run("cappUCcinO");
-        InstanceOS.run("Espresso");
-        InstanceOS.run("latte");
-        InstanceOS.run("mocha");
+//        InstanceOS.run("mocha");
+
+
+//        InstanceOS.run("cappUCcinO");
+//        InstanceOS.run("Espresso");
+//        InstanceOS.run("latte");
     }
 }

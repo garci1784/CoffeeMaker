@@ -105,55 +105,62 @@ public class CMMOperatingSystem implements CMM_Program_API_IF { // Use interface
             case "COFFEE":
                 classLoader = new Coffee_Server();
                 classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
-                classLoader.getEnvironment().makeCoffee();
-
-                // OS setting current running program
                 currentProgram = classLoader; // idk what Im doing.
                 System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+
+                currentProgram.start();
+
+//                classLoader.getEnvironment().makeCoffee(); // testing
+                // OS setting current running program
                 break;
 
             case "CAPPUCCINO":
                 classLoader = new Capp_Server();
                 classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
-                classLoader.getEnvironment().makeCoffee();
-
                 // OS setting current running program
                 currentProgram = classLoader;
                 System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+//                classLoader.getEnvironment().makeCoffee();
+                currentProgram.start();
 
                 break;
 
-            case"MOCHA":
+            case "MOCHA":
                 classLoader = new Mocha_Server();
                 classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
-                classLoader.getEnvironment().makeCoffee();
-
                 // OS setting current running program
                 currentProgram = classLoader;
                 System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+//                classLoader.getEnvironment().makeCoffee();
+                currentProgram.start();
 
                 break;
 
             case "ESPRESSO":
                 classLoader = new Espresso_Server();
                 classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
-                classLoader.getEnvironment().makeCoffee();
-
                 // OS setting current running program
                 currentProgram = classLoader;
                 System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+//                classLoader.getEnvironment().makeCoffee();
+
+                currentProgram.start();
 
                 break;
 
             case"LATTE":
                 classLoader = new Latte_Server();
                 classLoader.setEnvironment((CMM_Program_API_IF) classLoader);
-                classLoader.getEnvironment().makeCoffee();
-
                 // OS setting current running program
                 currentProgram = classLoader;
                 System.out.println("Selected program is " + currentProgram.getName()); // append program.getName() here
+//                classLoader.getEnvironment().makeCoffee();
+                currentProgram.start();
 
+                break;
+
+            default:
+                // keep compiler happy
                 break;
         }// end switch for program name
 
